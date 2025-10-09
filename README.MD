@@ -1,4 +1,4 @@
-# 🐶 Bonk.fun Multi-Wallet Bundle Trading Bot
+# 🦊 Bonk.fun Multi-Wallet Bundle Trading Bot
 
 A fast and reliable Solana bundle trading bot for **bonkfun** and **bonk.fun**-style token launches. This bot uses **Jito bundles** to create tokens and execute **multi-wallet buys in a single atomic block**. Built with **Raydium SDK v2**, it's designed for seamless one-block execution and fast inclusion.
 
@@ -6,6 +6,7 @@ A fast and reliable Solana bundle trading bot for **bonkfun** and **bonk.fun**-s
 
 - ✅ Supports **dynamic multi-wallet bundling** (12+ wallets)
 - ✅ Atomically creates tokens and buys from multiple wallets in **one block**
+- ✅ **Dual bundle submission modes**: Standard Jito & Lil Jito
 - ✅ Uses **Jito** relayer for secure and efficient bundle submission
 - ✅ Executes trades via **Raydium SDK v2**
 - ✅ Optimized for priority compute unit pricing
@@ -18,9 +19,7 @@ These are just examples — the bot supports **any number of wallets**:
 
 | Wallet Count | Jito Bundle                                                                                                  |
 | ------------ | ------------------------------------------------------------------------------------------------------------ |
-| 2 Wallets    | [🔗 View](https://explorer.jito.wtf/bundle/56ac378f193c9b90a4b6d2c52096a2d783653f300c343d59976691b2a6fcb184) |
-| 9 Wallets    | [🔗 View](https://explorer.jito.wtf/bundle/8116172ad6bea279b6873020ac412eb36c9777b311b96ab38c58204637166bf1) |
-| 12 Wallets   | [🔗 View](https://explorer.jito.wtf/bundle/eb6d075d4f3e065d5e127ec76c328e00e08d3608ee858a15fa13a21c8f922d98) |
+| 12 Wallets   | [🔗 View](https://explorer.jito.wtf/bundle/dfec1729f72262df142ecd8b9a275fbe0addf35af743a99c5c0f1deb0fc0cf43) |
 
 ---
 
@@ -30,6 +29,37 @@ These are just examples — the bot supports **any number of wallets**:
 2. Prepares swap transactions from multiple wallets
 3. Wraps them into a **single atomic bundle** using Jito
 4. Submits the bundle for inclusion in the same block
+
+---
+
+## 🎯 Bundle Submission Modes
+
+The bot now supports **two bundle submission modes**:
+
+### **Standard Jito Mode** (Default)
+
+- Uses official Jito block-engine endpoints (NY, Tokyo)
+- Industry-standard bundle submission
+- Tested and reliable for mainnet execution
+
+### **Lil Jito Mode** 🆕
+
+- Alternative bundle submission endpoint
+- Configurable via environment variables
+- Includes bundle simulation and status tracking
+- Easy toggle between modes via `LIL_JIT_MODE` flag
+
+**Configuration:**
+
+```bash
+# Enable Lil Jito Mode
+LIL_JIT_MODE=true
+LIL_JIT_ENDPOINT=<your-lil-jit-endpoint>
+LIL_JIT_WEBSOCKET_ENDPOINT=<your-lil-jit-ws-endpoint>
+
+# Use Standard Jito Mode (default)
+LIL_JIT_MODE=false
+```
 
 ---
 
@@ -68,8 +98,6 @@ Use higher values during congestion, or lower for savings.
 For MEV bot customization, consulting, or private collaboration:
 **Open an issue** or reach out via Discord/Telegram (on request).
 
-**Telegram**: [@Tru3B1iss](https://t.me/Tru3B1iss)
-**X (Twitter)**: [@XTruebliss](https://x.com/XTruebliss)
-**Discord**: [@trueb1iss](https://discord.com/users/1274339638668038187)
+**Telegram**: [@xMuseNine](https://t.me/xMuseNine)
 
 ---
